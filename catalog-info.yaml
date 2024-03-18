@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: boiling-ocelot-python-gitops
+  description: This is GitOps manifest for boiling-ocelot-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: boiling-ocelot-python
+    janus-idp.io/tekton: boiling-ocelot-python 
+    backstage.io/kubernetes-id: boiling-ocelot-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:boiling-ocelot-python
